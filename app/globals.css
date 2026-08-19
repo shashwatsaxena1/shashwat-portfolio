@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 222 47% 8%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 8%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 8%;
+    --primary: 38 92% 50%;
+    --primary-foreground: 222 47% 8%;
+    --secondary: 220 16% 92%;
+    --secondary-foreground: 222 47% 10%;
+    --muted: 220 16% 92%;
+    --muted-foreground: 221 10% 38%;
+    --accent: 20 95% 55%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 14% 85%;
+    --input: 220 14% 88%;
+    --ring: 38 92% 50%;
+    --radius: 1.15rem;
+    --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --font-display: "Space Grotesk", Inter, ui-sans-serif, system-ui, sans-serif;
+  }
+
+  .dark {
+    --background: 224 49% 5%;
+    --foreground: 210 40% 98%;
+    --card: 224 38% 8%;
+    --card-foreground: 210 40% 98%;
+    --popover: 224 38% 8%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 45 96% 54%;
+    --primary-foreground: 222 47% 8%;
+    --secondary: 225 22% 13%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 225 22% 13%;
+    --muted-foreground: 215 20% 68%;
+    --accent: 17 96% 58%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 78% 55%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 224 20% 18%;
+    --input: 224 20% 18%;
+    --ring: 45 96% 54%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: rgba(250, 204, 21, 0.35);
+    color: inherit;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .section-padding {
+    @apply py-20 md:py-28;
+  }
+
+  .premium-border {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .glass-panel {
+    @apply border border-white/10 bg-white/70 shadow-2xl shadow-black/5 backdrop-blur-xl dark:bg-white/[0.045] dark:shadow-black/40;
+  }
+
+  .grid-mask {
+    mask-image: linear-gradient(to bottom, black, transparent 75%);
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-foreground via-primary to-accent bg-clip-text text-transparent;
+  }
+
+  .noise-overlay {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.78' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.34'/%3E%3C/svg%3E");
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

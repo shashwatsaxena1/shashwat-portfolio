@@ -1,0 +1,43 @@
+{
+  "name": "shashwat-premium-portfolio",
+  "version": "1.0.3-node24-npm",
+  "private": true,
+  "description": "Premium editable developer portfolio built with Next.js App Router, TypeScript, Tailwind CSS, Framer Motion, and shadcn/ui-style components.",
+  "packageManager": "npm@11.13.0",
+  "engines": {
+    "node": ">=24.0.0",
+    "npm": ">=11.0.0"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "type-check": "tsc --noEmit",
+    "check": "npm run type-check && npm run build",
+    "setup": "npm install"
+  },
+  "dependencies": {
+    "@radix-ui/react-slot": "1.1.2",
+    "class-variance-authority": "0.7.1",
+    "clsx": "2.1.1",
+    "framer-motion": "11.18.2",
+    "lucide-react": "0.475.0",
+    "next": "16.2.9",
+    "next-themes": "0.4.4",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "tailwind-merge": "2.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "24.0.14",
+    "@types/react": "19.0.7",
+    "@types/react-dom": "19.0.3",
+    "autoprefixer": "10.4.20",
+    "eslint": "9.39.1",
+    "eslint-config-next": "16.2.9",
+    "postcss": "8.5.10",
+    "tailwindcss": "3.4.17",
+    "typescript": "5.7.3"
+  }
+}
